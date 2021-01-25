@@ -39,3 +39,20 @@ function appendData(data) {
     }
   }
 }
+function filterTags() {
+  var searchTerm = document.getElementById("searchInput").value;
+  document.getElementById("searchResult").innerHTML = 
+    "You searched for: " + searchTerm;
+  
+  const searchTermLower = searchTerm.toLowerCase();
+
+  const filteredCards = cards.filter((card) => {
+    return (
+      card.tags.find.(tag)) => {
+        const tagLower = tag.toLowerCase();
+        return tagLower.includes(searchTermLower);
+      }) !== undefined
+    );
+  });
+  appendData(filteredCards);
+}
